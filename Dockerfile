@@ -17,8 +17,8 @@ RUN dotnet build --configuration Release
 RUN dotnet tool install --global Microsoft.Playwright.CLI
 RUN export PATH="$PATH:/root/.dotnet/tools"
 RUN ls -R bin
-RUN chmod +x bin/Debug/net7.0/playwright.sh && \
-    bin/Debug/net7.0/playwright.sh install
+RUN chmod +x bin/Debug/net7.0/playwright.ps1 && \
+    bin/Debug/net7.0/playwright.ps1 install
 
 # Komenda, która odpali testy (testy muszą być w Twoim projekcie)
 CMD ["dotnet", "test", "--logger:trx"]

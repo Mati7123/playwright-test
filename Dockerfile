@@ -21,5 +21,10 @@ RUN chmod +x bin/Release/net7.0/playwright.ps1 && \
     pwsh bin/Release/net7.0/playwright.ps1 install-deps && \
     pwsh bin/Release/net7.0/playwright.ps1 install
     
+RUN wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
+    tar -xf azcopy.tar.gz --strip-components=1 && \
+    mv azcopy /usr/bin/azcopy && \
+    chmod +x /usr/bin/azcopy
+    
 # Komenda, która odpali testy (testy muszą być w Twoim projekcie)
 CMD ["dotnet", "test", "--logger:trx"]

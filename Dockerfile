@@ -16,6 +16,7 @@ RUN dotnet build --configuration Release
 # Instalujemy Playwright (pobiera przeglądarki)
 RUN dotnet tool install --global Microsoft.Playwright.CLI
 RUN export PATH="$PATH:/root/.dotnet/tools"
+RUN ls -R bin
 RUN chmod +x bin/Debug/net7.0/playwright.sh && \
     bin/Debug/net7.0/playwright.sh install
 

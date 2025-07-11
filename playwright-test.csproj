@@ -22,4 +22,8 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="**\*.cs" />
+  </ItemGroup>
+
 </Project>

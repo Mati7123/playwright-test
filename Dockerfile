@@ -16,7 +16,7 @@ RUN dotnet build --configuration Release
 # Instalujemy Playwright (pobiera przeglądarki)
 RUN dotnet tool install --global Microsoft.Playwright.CLI
 RUN export PATH="$PATH:/root/.dotnet/tools"
-RUN playwright install
+RUN pwsh bin/Debug/net7.0/playwright.ps1 install
 
 # Komenda, która odpali testy (testy muszą być w Twoim projekcie)
 CMD ["dotnet", "test", "--logger:trx"]

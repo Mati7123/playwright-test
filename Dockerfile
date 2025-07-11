@@ -27,4 +27,11 @@ RUN wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
     chmod +x /usr/bin/azcopy
     
 # Komenda, która odpali testy (testy muszą być w Twoim projekcie)
-entrypoint.sh
+# Skopiuj skrypt entrypoint
+COPY entrypoint.sh /entrypoint.sh
+
+# Nadaj uprawnienia do wykonania
+RUN chmod +x /entrypoint.sh
+
+# Ustaw jako komendę startową kontenera
+ENTRYPOINT ["/entrypoint.sh"]

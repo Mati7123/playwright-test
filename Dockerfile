@@ -27,4 +27,4 @@ RUN wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
     chmod +x /usr/bin/azcopy
     
 # Komenda, która odpali testy (testy muszą być w Twoim projekcie)
-CMD ["dotnet", "test", "--logger:trx"]
+entrypoint.sh

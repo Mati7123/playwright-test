@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "📥 Pobieram plik z Azure Blob Storage..."
 azcopy copy "$AZCOPY_URL" "/app/playwright_test/Test1.cs"
